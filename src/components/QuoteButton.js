@@ -7,7 +7,6 @@ function QuoteButton(props) {
     axios
       .get("https://officeapi.dev/api/quotes/random/")
       .then((res) => {
-        console.log(res.data);
         props.updateQuote(res.data);
       })
       .catch((err) => console.log(err));
