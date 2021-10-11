@@ -5,7 +5,7 @@ import { Container, Button, Row, Col, Card } from "react-bootstrap";
 function QuoteButton(props) {
   function generateQuote() {
     axios
-      .get("https://officeapi.dev/api/quotes/random")
+      .get("https://officeapi.dev/api/quotes/random/")
       .then((res) => {
         console.log(res.data);
         props.updateQuote(res.data);
