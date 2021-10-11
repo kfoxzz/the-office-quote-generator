@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Row, Container, Card, Col } from "react-bootstrap";
 import { IMAGES } from "../store/store";
 import Spinner from "./Spinner";
