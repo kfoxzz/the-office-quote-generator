@@ -11,7 +11,11 @@ function InfoCard() {
             </Card.Title>
             <Card.Subtitle>
               Browse your favorite quotes from The Office, courtesy of{" "}
-              <a href="https://www.officeapi.dev/" target="_blank">
+              <a
+                href="https://www.officeapi.dev/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 The Office API
               </a>
               .

@@ -1,15 +1,26 @@
-import axios from "axios";
 import React from "react";
-import { Container, Button, Row, Col, Card } from "react-bootstrap";
+import { Container, Button, Row, Col } from "react-bootstrap";
 
 function QuoteButton(props) {
+
   function generateQuote() {
-    axios
-      .get("https://officeapi.dev/api/quotes/random/")
-      .then((res) => {
-        props.updateQuote(res.data);
-      })
-      .catch((err) => console.log(err));
+    props.updateLoading();
+    fetch("https://gentle-bar-e17d.kfoxz.workers.dev")
+      .then(
+        (response) => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error("Request failed!");
+        },
+        (networkError) => {
+          console.log(networkError.message);
+        }
+      )
+      .then((jsonResponse) => {
+        props.updateQuote(jsonResponse);
+        return jsonResponse;
+      });
   }
 
   return (
